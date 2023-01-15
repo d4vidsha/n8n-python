@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker pull n8nio/n8n:latest
+docker build --platform linux/arm/v7 -f /home/pi/docker/n8n/Dockerfile -t pixelcoin/n8n-python .
+docker push pixelcoin/n8n-python
