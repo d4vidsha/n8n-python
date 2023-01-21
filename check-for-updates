@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# get the script directory
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 docker pull n8nio/n8n:latest
-docker build --platform linux/arm/v7 -f /home/pi/docker/n8n/Dockerfile -t pixelcoin/n8n-python .
+docker build --platform linux/arm/v7 -f $SCRIPT_DIR/Dockerfile -t pixelcoin/n8n-python .
 docker push pixelcoin/n8n-python
